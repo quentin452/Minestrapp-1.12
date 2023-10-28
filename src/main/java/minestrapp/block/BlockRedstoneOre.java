@@ -29,9 +29,9 @@ public class BlockRedstoneOre extends BlockStoneBaseMOnly
 	public BlockRedstoneOre(String name, Material material, SoundType soundType, float hardness, String tool, int harvestLevel, boolean isOn)
 	{
 		super(null, material, soundType, hardness, tool, harvestLevel);
-		
+        this.setTranslationKey(name);
 
-		if (isOn == false)
+        if (isOn == false)
         {
 			this.setRegistryName(new ResourceLocation(Minestrapp.MODID, this.getTranslationKey().substring(5)));
         }
