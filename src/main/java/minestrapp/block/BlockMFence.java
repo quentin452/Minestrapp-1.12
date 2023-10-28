@@ -57,7 +57,6 @@ public class BlockMFence extends BlockFence implements IMetaBlockName
     public BlockMFence()
 	{
 		super(Material.WOOD, MapColor.WOOD);
-		this.setUnlocalizedName("m_fence");
 		this.setRegistryName("m_fence");
 		this.setSoundType(SoundType.WOOD);
 		this.setHardness(2F);
@@ -132,7 +131,8 @@ public class BlockMFence extends BlockFence implements IMetaBlockName
         IBlockState iblockstate = worldIn.getBlockState(pos);
         BlockFaceShape blockfaceshape = iblockstate.getBlockFaceShape(worldIn, pos, facing);
         Block block = iblockstate.getBlock();
-        boolean flag = blockfaceshape == BlockFaceShape.MIDDLE_POLE && (iblockstate.getMaterial() == this.blockMaterial || block instanceof BlockFenceGate);
+        boolean flag = blockfaceshape == BlockFaceShape.MIDDLE_POLE &&
+                (iblockstate.getBlock() == this || block instanceof BlockFenceGate);
         return !isExcepBlockForAttachWithPiston(block) && blockfaceshape == BlockFaceShape.SOLID || flag;
     }
 

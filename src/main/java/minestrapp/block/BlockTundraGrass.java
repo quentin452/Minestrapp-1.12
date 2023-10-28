@@ -43,7 +43,6 @@ public class BlockTundraGrass extends BlockBush
 	{
 		super(Material.VINE);
 		this.setDefaultState(this.blockState.getBaseState().withProperty(SNOWY, Boolean.valueOf(false)));
-		this.setUnlocalizedName(name);
 		this.setRegistryName(name);
 		this.setSoundType(SoundType.PLANT);
 		this.setCreativeTab(MTabs.plant);

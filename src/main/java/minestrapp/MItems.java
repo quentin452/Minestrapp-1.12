@@ -811,7 +811,10 @@ public class MItems
 		((MItemBlock) Item.getItemFromBlock(MBlocks.palm_fronds_dead)).setBurnTime(200);
 		((MItemBlock) Item.getItemFromBlock(MBlocks.mossy_m_planks)).setBurnTime(400);
 		((MItemBlock) Item.getItemFromBlock(MBlocks.fence)).setBurnTime(300);
-		((MItemBlock) Item.getItemFromBlock(MBlocks.wood_slab_1)).setBurnTime(300);
+		Item item = Item.getItemFromBlock(MBlocks.wood_slab_1);
+		if(item instanceof MItemBlock) {
+			((MItemBlock)item).setBurnTime(300);
+		}
 		((MItemBlock) Item.getItemFromBlock(MBlocks.oak_plank_panel)).setBurnTime(300);
 		((MItemBlock) Item.getItemFromBlock(MBlocks.spruce_plank_panel)).setBurnTime(300);
 		((MItemBlock) Item.getItemFromBlock(MBlocks.birch_plank_panel)).setBurnTime(300);

@@ -76,7 +76,7 @@ public class BlockPanelBase extends BlockBase
 	
 	public BlockPanelBase(Block block, CreativeTabs tab)
 	{
-		super("panel_" + block.getUnlocalizedName().substring(5), block.getMaterial(block.getDefaultState()), MapColor.AIR, block.getSoundType(), 0F, block.getHarvestTool(block.getDefaultState()), block.getHarvestLevel(block.getDefaultState()));
+		super("panel_" + block.getTranslationKey().substring(5), block.getMaterial(block.getDefaultState()), MapColor.AIR, block.getSoundType(), 0F, block.getHarvestTool(block.getDefaultState()), block.getHarvestLevel(block.getDefaultState()));
 		this.block = block;
 		this.meta = 0;
 		this.setLightOpacity(255);
@@ -87,7 +87,7 @@ public class BlockPanelBase extends BlockBase
 	
 	public BlockPanelBase(Block block, CreativeTabs tab, int meta, String variant)
 	{
-		super("panel_" + block.getUnlocalizedName().substring(5) + "_" + variant, block.getStateFromMeta(meta).getMaterial(), MapColor.AIR, block.getSoundType(), 0F, block.getHarvestTool(block.getStateFromMeta(meta)), block.getHarvestLevel(block.getStateFromMeta(meta)));
+		super("panel_" + block.getTranslationKey().substring(5) + "_" + variant, block.getStateFromMeta(meta).getMaterial(), MapColor.AIR, block.getSoundType(), 0F, block.getHarvestTool(block.getStateFromMeta(meta)), block.getHarvestLevel(block.getStateFromMeta(meta)));
 		this.block = block;
 		this.meta = meta;
 		this.setLightOpacity(255);
@@ -401,10 +401,10 @@ public class BlockPanelBase extends BlockBase
 			}
 		}
     }
-    
+
 	public static EnumFacing getFacing(int meta)
     {
-    	return EnumFacing.getFront(meta & 7);
+    	return EnumFacing.fromAngle(meta & 7);
     }
     
     public IBlockState withRotation(IBlockState state, Rotation rot)
@@ -436,9 +436,9 @@ public class BlockPanelBase extends BlockBase
     /**
      * Called after a player destroys this Block - the posiiton pos may no longer hold the state indicated.
      */
-    public void onBlockDestroyedByPlayer(World worldIn, BlockPos pos, IBlockState state)
+    public void onPlayerDestroy(World worldIn, BlockPos pos, IBlockState state)
     {
-        this.block.onBlockDestroyedByPlayer(worldIn, pos, state);
+        this.block.onPlayerDestroy(worldIn, pos, state);
     }
 
     @SideOnly(Side.CLIENT)
@@ -477,7 +477,7 @@ public class BlockPanelBase extends BlockBase
     @SideOnly(Side.CLIENT)
     public BlockRenderLayer getBlockLayer()
     {
-        return this.block.getBlockLayer();
+        return this.block.getRenderLayer();
     }
 
     /**
@@ -543,9 +543,9 @@ public class BlockPanelBase extends BlockBase
     /**
      * Called when this Block is destroyed by an Explosion
      */
-    public void onBlockDestroyedByExplosion(World worldIn, BlockPos pos, Explosion explosionIn)
+    public void onExplosionDestroy(World worldIn, BlockPos pos, Explosion explosionIn)
     {
-        this.block.onBlockDestroyedByExplosion(worldIn, pos, explosionIn);
+        this.block.onExplosionDestroy(worldIn, pos, explosionIn);
     }
 
     /**

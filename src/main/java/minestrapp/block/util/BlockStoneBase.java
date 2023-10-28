@@ -51,8 +51,7 @@ public static final PropertyEnum<EnumStoneType> VARIANT = PropertyEnum.<EnumSton
 		this.setDefaultState(this.blockState.getBaseState().withProperty(VARIANT, EnumStoneType.STONE));
 		if(name != null)
 		{
-			this.setUnlocalizedName(name);
-			this.setRegistryName(new ResourceLocation(Minestrapp.MODID, this.getUnlocalizedName().substring(5)));
+			this.setRegistryName(new ResourceLocation(Minestrapp.MODID, this.getTranslationKey().substring(5)));
 		}
 		this.setSoundType(soundType);
 		this.setHardness(hardness);

@@ -8,7 +8,7 @@ public class BlockHalfMiscStoneSlab1 extends BlockMiscStoneSlab1
 	public BlockHalfMiscStoneSlab1(String name)
 	{
 		super(name);
-		this.setRegistryName(new ResourceLocation(Minestrapp.MODID, this.getUnlocalizedName().substring(5)));
+		this.setRegistryName(new ResourceLocation(Minestrapp.MODID, this.getTranslationKey().substring(5)));
 	}
 
 	@Override

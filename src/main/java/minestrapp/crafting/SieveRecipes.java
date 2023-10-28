@@ -110,7 +110,7 @@ public class SieveRecipes
     {
 		if(this.sieving.contains(state))
 		{
-			ResourceLocation location = new ResourceLocation(Minestrapp.MODID, "sieve/" + state.getBlock().getUnlocalizedName().substring(5) + "_" + state.getBlock().getMetaFromState(state));
+			ResourceLocation location = new ResourceLocation(Minestrapp.MODID, "sieve/" + state.getBlock().getTranslationKey().substring(5) + "_" + state.getBlock().getMetaFromState(state));
 			return location;
 		}
 		else

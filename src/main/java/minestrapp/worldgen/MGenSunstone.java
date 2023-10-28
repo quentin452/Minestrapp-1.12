@@ -47,9 +47,9 @@ public class MGenSunstone extends WorldGenerator
 	                        	for(int q = 0 ; q < EnumFacing.VALUES.length ; q++)
 	                        	{
 
-	                        		if(BlockOreDeposit.canGenerateBlock(worldIn, blockpos, EnumFacing.getFront(q)))
+	                        		if(BlockOreDeposit.canGenerateBlock(worldIn, blockpos, EnumFacing.fromAngle(q)))
 	                        		{
-	                        			worldIn.setBlockState(blockpos, MBlocks.sunstone_deposit.getDefaultState().withProperty(BlockOreDeposit.FACING, EnumFacing.getFront(q)), 2);
+	                        			worldIn.setBlockState(blockpos, MBlocks.sunstone_deposit.getDefaultState().withProperty(BlockOreDeposit.FACING, EnumFacing.fromAngle(q)), 2);
 	                        			break;
 	                        		}
 	                        	}

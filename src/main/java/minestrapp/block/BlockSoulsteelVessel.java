@@ -63,7 +63,6 @@ public class BlockSoulsteelVessel extends BlockContainer
 		this.setHarvestLevel("pickaxe", 0);
 		this.setSoundType(SoundType.METAL);
 		this.setDefaultState(this.blockState.getBaseState().withProperty(LEVEL, Integer.valueOf(0)).withProperty(FACING, EnumFacing.NORTH));
-		this.setUnlocalizedName("soulsteel_vessel");
 		this.setRegistryName("soulsteel_vessel");
 	}
 	
@@ -112,10 +111,18 @@ public class BlockSoulsteelVessel extends BlockContainer
     {
         return ((Integer)blockState.getValue(LEVEL)).intValue();
     }
-    
-    public IBlockState getStateFromMeta(int meta)
-    {
-    	return this.getDefaultState().withProperty(FACING, EnumFacing.getHorizontal(meta));
+
+    public IBlockState getStateFromMeta(int meta) {
+
+        EnumFacing facing = EnumFacing.byIndex(meta & 3);
+
+        if(facing == null || !facing.getAxis().isHorizontal()) {
+            facing = EnumFacing.NORTH;
+        }
+
+        return this.getDefaultState()
+                .withProperty(FACING, facing);
+
     }
     
     public int getMetaFromState(IBlockState state)

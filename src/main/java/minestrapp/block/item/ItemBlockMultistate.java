@@ -13,16 +13,16 @@ public class ItemBlockMultistate extends MItemBlock
 		super(block);
 		if(!(block instanceof IMetaBlockName))
 		{
-			throw new IllegalArgumentException(String.format("The given Block %s is not an instance of IMetaBlockName!", block.getUnlocalizedName()));
+			throw new IllegalArgumentException(String.format("The given Block %s is not an instance of IMetaBlockName!", block.getTranslationKey()));
 		}
 		this.setHasSubtypes(true);
 		this.setMaxDamage(0);
 	}
 
 	@Override
-	public String getUnlocalizedName(ItemStack stack)
+	public String getTranslationKey(ItemStack stack)
 	{
-		return super.getUnlocalizedName() + "_" + ((IMetaBlockName) this.block).getSpecialName(stack);
+		return super.getTranslationKey() + "_" + ((IMetaBlockName) this.block).getSpecialName(stack);
 	}
 	
 	public int getMetadata(int damage)

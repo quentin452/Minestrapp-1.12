@@ -14,7 +14,6 @@ public class TomatoPlant extends BlockCrops {
 
 	
 	public TomatoPlant(String unlocalizedName){
-		this.setUnlocalizedName(unlocalizedName);
 		this.setRegistryName(new ResourceLocation(Minestrapp.MODID, unlocalizedName));
 	}
 	

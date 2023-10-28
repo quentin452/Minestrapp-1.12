@@ -59,7 +59,6 @@ public class BlockPipe extends BlockContainer
 		this.setHarvestLevel("pickaxe", deep ? 1 : 0);
 		this.setResistance(6F);
 		this.setCreativeTab(MTabs.utility);
-		this.setUnlocalizedName(name);
 		this.setRegistryName(name);
 		this.setOverridableDefaultState();
 		this.covered = covered;
@@ -159,7 +158,7 @@ public class BlockPipe extends BlockContainer
     
     public static EnumFacing getFacing(int meta)
     {
-    	return EnumFacing.getFront(meta & 7);
+    	return EnumFacing.fromAngle(meta & 7);
     }
     
     public IBlockState withRotation(IBlockState state, Rotation rot)

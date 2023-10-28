@@ -46,7 +46,6 @@ public abstract class BlockMiscStoneSlab2 extends BlockSlab implements IMetaBloc
         }
 
         this.setDefaultState(iblockstate.withProperty(VARIANT, BlockMiscStoneSlab2.EnumType.SHIMMERSTONE_BRICKS));
-        this.setUnlocalizedName(name);
         this.setCreativeTab(MTabs.stone);
         this.useNeighborBrightness = true;
         this.setHardness(2F);
@@ -157,7 +156,7 @@ public abstract class BlockMiscStoneSlab2 extends BlockSlab implements IMetaBloc
     }
 
 	@Override
-	public String getUnlocalizedName(int meta)
+	public String getTranslationKey(int meta)
 	{
 		return BlockMiscStoneSlab2.EnumType.byMetadata(meta).getName();
 	}

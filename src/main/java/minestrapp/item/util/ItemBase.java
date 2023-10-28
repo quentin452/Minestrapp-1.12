@@ -23,7 +23,6 @@ public class ItemBase extends Item
 	
 	public ItemBase(String name)
 	{
-		this.setUnlocalizedName(name);
 		this.setRegistryName(name);
 		this.foiled = false;
 		this.burnTime = 0;

@@ -30,11 +30,10 @@ public class BlockRedstoneOre extends BlockStoneBaseMOnly
 	{
 		super(null, material, soundType, hardness, tool, harvestLevel);
 		
-		this.setUnlocalizedName(name);
-		
+
 		if (isOn == false)
         {
-			this.setRegistryName(new ResourceLocation(Minestrapp.MODID, this.getUnlocalizedName().substring(5)));
+			this.setRegistryName(new ResourceLocation(Minestrapp.MODID, this.getTranslationKey().substring(5)));
         }
 		else
 		{

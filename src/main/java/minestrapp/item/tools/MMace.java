@@ -44,7 +44,6 @@ public class MMace extends Item
         this.setMaxDamage(material.getMaxUses());
         this.attackDamage = 4F + Math.round((material.getAttackDamage() * 2.5F));
         this.burnTime = 0;
-        this.setUnlocalizedName(unlocalizedName);
         this.setRegistryName(unlocalizedName);
         this.setCreativeTab(MTabs.combat);
     }

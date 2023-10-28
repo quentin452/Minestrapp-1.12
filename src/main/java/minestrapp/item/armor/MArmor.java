@@ -12,7 +12,6 @@ public class MArmor extends ItemArmor
 	public MArmor(ArmorMaterial materialIn, int renderIndexIn, EntityEquipmentSlot equipmentSlotIn, String name){
 		
 		super(materialIn, renderIndexIn, equipmentSlotIn);
-		this.setUnlocalizedName(name);
 		this.setRegistryName(name);
 		this.setCreativeTab(MTabs.combat);
 		

@@ -115,7 +115,7 @@ public class BlockSpotlight extends BlockBase
 	public static EnumFacing getFacing(int meta)
     {
         int i = meta & 7;
-        return i > 5 ? null : EnumFacing.getFront(i);
+        return i > 5 ? null : EnumFacing.fromAngle(i);
     }
 	
 	public IBlockState getStateFromMeta(int meta)

@@ -97,7 +97,7 @@ public class BlockBlazium extends BlockBase
 
                             if (o > 0)
                             {
-                                int p = (o + 40 + worldIn.getDifficulty().getDifficultyId() * 7) / (30);
+                                int p = (o + 40 + worldIn.getDifficulty().getId() * 7) / (30);
 
                                 if (flag1)
                                 {
@@ -150,7 +150,7 @@ public class BlockBlazium extends BlockBase
 
             if (iblockstate.getBlock() == Blocks.TNT)
             {
-                Blocks.TNT.onBlockDestroyedByPlayer(worldIn, pos, iblockstate.withProperty(BlockTNT.EXPLODE, Boolean.valueOf(true)));
+                Blocks.TNT.onPlayerDestroy(worldIn, pos, iblockstate.withProperty(BlockTNT.EXPLODE, Boolean.valueOf(true)));
             }
         }
     }

@@ -149,9 +149,8 @@ public class TileEntityActivator extends TileEntityLockableLoot
 	{
 		return oldState.getBlock() == MBlocks.activator && newState.getBlock() == MBlocks.activator ? false : true;
 	}
-	
-	public boolean isRedstonePowered()
-	{
-		return this.world.isBlockIndirectlyGettingPowered(pos) > 0;
+
+	public boolean isRedstonePowered() {
+		return this.world.getRedstonePowerFromNeighbors(pos) > 0;
 	}
 }

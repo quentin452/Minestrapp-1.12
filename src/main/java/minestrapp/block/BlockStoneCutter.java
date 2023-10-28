@@ -37,16 +37,20 @@ public class BlockStoneCutter extends BlockContainer
 		this.setHarvestLevel("pickaxe", 0);
 		this.setSoundType(SoundType.STONE);
 		this.setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.NORTH));
-		this.setUnlocalizedName("stonecutter");
 		this.setRegistryName("stonecutter");
 	}
     protected BlockStateContainer createBlockState()
     {
         return new BlockStateContainer(this, new IProperty[] {FACING});
     }
-    public IBlockState getStateFromMeta(int meta)
-    {
-    	return this.getDefaultState().withProperty(FACING, EnumFacing.getHorizontal(meta));
+    public IBlockState getStateFromMeta(int meta) {
+
+        EnumFacing[] values = EnumFacing.values();
+
+        return this.getDefaultState()
+                .withProperty(
+                        FACING, values[(meta & 3)]);
+
     }
     
     public int getMetaFromState(IBlockState state)

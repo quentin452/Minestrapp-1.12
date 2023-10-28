@@ -40,7 +40,6 @@ public class MAxe extends ItemTool
         super(material, EFFECTIVE_ON);
         this.attackDamage = damage;
         this.attackSpeed = speed;
-        this.setUnlocalizedName(unlocalizedName);
         this.setRegistryName(unlocalizedName);
         this.setCreativeTab(MTabs.tools);
     }

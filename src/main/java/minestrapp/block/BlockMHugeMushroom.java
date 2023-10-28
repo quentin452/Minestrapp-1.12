@@ -18,7 +18,6 @@ public class BlockMHugeMushroom extends BlockHugeMushroom
 	public BlockMHugeMushroom(Material materialIn, MapColor color, Block smallBlockIn, String name)
 	{
 		super(materialIn, color, smallBlockIn);
-		this.setUnlocalizedName(name);
 		this.setRegistryName(name);
 	}
 	

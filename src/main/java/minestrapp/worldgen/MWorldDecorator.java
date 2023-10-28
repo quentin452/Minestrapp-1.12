@@ -61,7 +61,7 @@ public class MWorldDecorator
 		if(world.provider.getDimension() == 0)
 		{
 			BlockPos pos = new BlockPos(chunkX * 16, 0, chunkZ * 16);
-			Chunk chunk = world.getChunkFromBlockCoords(pos);
+			Chunk chunk = world.getChunk(pos);
 			BiomeProvider chunkManager = world.getBiomeProvider();
 			IBlockState stone = MBlocks.stone.getDefaultState();
 			EnumStoneTypeMOnly sType = null;
@@ -631,7 +631,7 @@ public class MWorldDecorator
 			if(MConfig.generateInvincium)
 			{
 				BlockPos pos = new BlockPos(chunkX * 16, 0, chunkZ * 16);
-				Chunk chunk = world.getChunkFromBlockCoords(pos);
+				Chunk chunk = world.getChunk(pos);
 				for (int x = 0; x < 16; x++)
 				{
 					for (int z = 0; z < 16; z++)
@@ -758,7 +758,7 @@ public class MWorldDecorator
 		else if(world.provider.getDimension() == 1)
 		{
 			BlockPos pos = new BlockPos(chunkX * 16, 0, chunkZ * 16);
-			Chunk chunk = world.getChunkFromBlockCoords(pos);
+			Chunk chunk = world.getChunk(pos);
 	
 			if((chunkX * chunkX) + (chunkZ * chunkZ) > 3844)
 			{

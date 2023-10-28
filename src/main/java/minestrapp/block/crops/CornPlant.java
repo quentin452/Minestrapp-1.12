@@ -19,7 +19,6 @@ public class CornPlant extends BlockCrops
 {
 	public CornPlant(String unlocalizedName)
 	{
-		this.setUnlocalizedName(unlocalizedName);
 		this.setRegistryName(new ResourceLocation(Minestrapp.MODID, unlocalizedName));
 	}
 	

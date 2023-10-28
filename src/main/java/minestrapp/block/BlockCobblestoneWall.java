@@ -104,7 +104,7 @@ public class BlockCobblestoneWall extends BlockStoneBaseMOnly implements IMetaBl
 	
 	public String getLocalizedName()
     {
-        return I18n.translateToLocal(this.getUnlocalizedName() + "." + EnumStoneTypeMOnly.RED_ROCK.getUnlocalizedName() + ".name");
+        return I18n.translateToLocal(this.getTranslationKey() + "." + EnumStoneTypeMOnly.RED_ROCK.getUnlocalizedName() + ".name");
     }
 	
 	public boolean isFullCube(IBlockState state)

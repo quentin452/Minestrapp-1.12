@@ -25,7 +25,6 @@ public class MItemHealthCrystal extends Item
 	public MItemHealthCrystal(String unlocalizedName){
 		maxStackSize=1;
 		setMaxDamage(1);
-        this.setUnlocalizedName(unlocalizedName);
         this.setRegistryName(unlocalizedName);
 	}
 

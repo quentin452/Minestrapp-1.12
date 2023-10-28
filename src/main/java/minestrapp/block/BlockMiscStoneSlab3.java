@@ -45,7 +45,6 @@ public abstract class BlockMiscStoneSlab3 extends BlockSlab implements IMetaBloc
         }
 
         this.setDefaultState(iblockstate.withProperty(VARIANT, BlockMiscStoneSlab3.EnumType.COLD_RED_SANDSTONE_BRICKS));
-        this.setUnlocalizedName(name);
         this.setCreativeTab(MTabs.stone);
         this.useNeighborBrightness = true;
         this.setHardness(2F);
@@ -156,7 +155,7 @@ public abstract class BlockMiscStoneSlab3 extends BlockSlab implements IMetaBloc
     }
 
 	@Override
-	public String getUnlocalizedName(int meta)
+	public String getTranslationKey(int meta)
 	{
 		return BlockMiscStoneSlab3.EnumType.byMetadata(meta).getName();
 	}

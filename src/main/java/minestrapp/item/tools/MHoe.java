@@ -25,7 +25,6 @@ public class MHoe extends ItemHoe
 	public MHoe(ToolMaterial material, String name)
 	{
 		super(material);
-		this.setUnlocalizedName(name);
 		this.setRegistryName(name);
 		this.setCreativeTab(MTabs.tools);
 	}

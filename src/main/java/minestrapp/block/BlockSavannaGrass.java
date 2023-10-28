@@ -40,7 +40,6 @@ public class BlockSavannaGrass extends BlockBush implements IGrowable
 	{
 		super(Material.VINE);
 		this.setDefaultState(this.blockState.getBaseState().withProperty(SECTION, BlockSavannaGrass.EnumGrassSection.SHORT));
-		this.setUnlocalizedName(name);
 		this.setRegistryName(name);
 		this.setSoundType(SoundType.PLANT);
 		this.setCreativeTab(MTabs.plant);

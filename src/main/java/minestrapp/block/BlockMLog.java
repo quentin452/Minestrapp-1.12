@@ -32,7 +32,6 @@ public class BlockMLog extends BlockLog implements IMetaBlockName
 	
 	public BlockMLog()
     {
-		this.setUnlocalizedName("m_log");
 		this.setRegistryName("m_log");
         this.setDefaultState(this.blockState.getBaseState().withProperty(VARIANT, BlockMPlanks.EnumType.REDWOOD).withProperty(LOG_AXIS, BlockLog.EnumAxis.Y));
     }

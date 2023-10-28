@@ -58,7 +58,7 @@ public class BlockMagnetPistonStructureHelper extends BlockPistonStructureHelper
 
 		if (!BlockMagnetPistonBase.canPush(state, this.world, this.blockToMove, this.moveDirection, false, this.moveDirection))
 		{
-			if (state.getMobilityFlag() == EnumPushReaction.DESTROY)
+			if (state.getPushReaction() == EnumPushReaction.DESTROY)
 			{
 				this.toDestroy.add(this.blockToMove);
 				return true;
@@ -67,6 +67,7 @@ public class BlockMagnetPistonStructureHelper extends BlockPistonStructureHelper
 			{
 				return false;
 			}
+
 		}
 		else if (!this.addBlockLine(this.blockToMove, this.moveDirection))
 		{
@@ -184,7 +185,7 @@ public class BlockMagnetPistonStructureHelper extends BlockPistonStructureHelper
 						return false;
 					}
 
-					if (state.getMobilityFlag() == EnumPushReaction.DESTROY)
+					if (state.getPushReaction() == EnumPushReaction.DESTROY)
 					{
 						this.toDestroy.add(blockpos1);
 						return true;

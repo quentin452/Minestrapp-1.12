@@ -47,7 +47,6 @@ public class BlockBarrel extends BlockContainer
 		this.setHarvestLevel("axe", 0);
 		this.setResistance(2F);
 		this.setCreativeTab(MTabs.utility);
-		this.setUnlocalizedName("barrel");
 		this.setRegistryName("barrel");
 	}
 	

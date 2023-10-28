@@ -59,7 +59,6 @@ public class BlockBase extends Block
 	public BlockBase(String name, Material material, MapColor mapColor, SoundType soundType, float hardness)
 	{
 		super(material);
-		this.setUnlocalizedName(name);
 		this.setRegistryName(name);
 		this.mapColor = mapColor;
 		this.setSoundType(soundType);
@@ -243,14 +242,14 @@ public class BlockBase extends Block
 	        return toolLevel >= this.getHarvestLevel(state);
 		}
     }
-	
-	public EnumPushReaction getMobilityFlag(IBlockState state)
-    {
-		if(this.customPushLogic)
+
+	public EnumPushReaction getPushReaction(IBlockState state)
+	{
+		if (this.customPushLogic)
 			return this.pushReaction;
 		else
-			return super.getMobilityFlag(state);
-    }
+			return super.getPushReaction(state);
+	}
 	
 	public BlockBase setRenderLayer(BlockRenderLayer layer)
 	{

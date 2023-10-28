@@ -17,7 +17,6 @@ public class BlockMPane extends BlockPane
 	public BlockMPane(String name, Material materialIn, boolean canDrop, MapColor mapcolor, SoundType sound)
 	{
 		super(materialIn, canDrop);
-		this.setUnlocalizedName(name);
 		this.setRegistryName(name);
 		this.setCreativeTab(MTabs.decor);
 		this.setSoundType(sound);

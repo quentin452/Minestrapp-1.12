@@ -110,21 +110,21 @@ public class TileEntityMagnetPiston extends TileEntityPiston
 	@SideOnly(Side.CLIENT)
 	public float getOffsetX(float ticks)
 	{
-		return (float)this.pistonFacing.getFrontOffsetX() * this.getExtendedProgress(this.getProgress(ticks));
+		return (float)this.pistonFacing.getXOffset() * this.getExtendedProgress(this.getProgress(ticks));
 	}
 
 	@Override
 	@SideOnly(Side.CLIENT)
 	public float getOffsetY(float ticks)
 	{
-		return (float)this.pistonFacing.getFrontOffsetY() * this.getExtendedProgress(this.getProgress(ticks));
+		return (float)this.pistonFacing.getYOffset() * this.getExtendedProgress(this.getProgress(ticks));
 	}
 
 	@Override
 	@SideOnly(Side.CLIENT)
 	public float getOffsetZ(float ticks)
 	{
-		return (float)this.pistonFacing.getFrontOffsetZ() * this.getExtendedProgress(this.getProgress(ticks));
+		return (float)this.pistonFacing.getZOffset() * this.getExtendedProgress(this.getProgress(ticks));
 	}
 
 	private float getExtendedProgress(float ticks)
@@ -143,7 +143,7 @@ public class TileEntityMagnetPiston extends TileEntityPiston
 	{
 		progress = this.getExtendedProgress(progress);
 		IBlockState iblockstate = this.getCollisionRelatedBlockState();
-		return iblockstate.getBoundingBox(world, pos).offset((double)(progress * (float)this.pistonFacing.getFrontOffsetX()), (double)(progress * (float)this.pistonFacing.getFrontOffsetY()), (double)(progress * (float)this.pistonFacing.getFrontOffsetZ()));
+		return iblockstate.getBoundingBox(world, pos).offset((double)(progress * (float)this.pistonFacing.getXOffset()), (double)(progress * (float)this.pistonFacing.getYOffset()), (double)(progress * (float)this.pistonFacing.getZOffset()));
 	}
 
 	private IBlockState getCollisionRelatedBlockState()
@@ -178,13 +178,13 @@ public class TileEntityMagnetPiston extends TileEntityPiston
 							switch (enumfacing.getAxis())
 							{
 								case X:
-									entity.motionX = (double)enumfacing.getFrontOffsetX();
+									entity.motionX = (double)enumfacing.getXOffset();
 									break;
 								case Y:
-									entity.motionY = (double)enumfacing.getFrontOffsetY();
+									entity.motionY = (double)enumfacing.getYOffset();
 									break;
 								case Z:
-									entity.motionZ = (double)enumfacing.getFrontOffsetZ();
+									entity.motionZ = (double)enumfacing.getZOffset();
 							}
 						}
 
@@ -210,7 +210,7 @@ public class TileEntityMagnetPiston extends TileEntityPiston
 						{
 							d1 = Math.min(d1, d0) + 0.01D;
 							MOVING_ENTITY.set(enumfacing);
-							entity.move(MoverType.PISTON, d1 * (double)enumfacing.getFrontOffsetX(), d1 * (double)enumfacing.getFrontOffsetY(), d1 * (double)enumfacing.getFrontOffsetZ());
+							entity.move(MoverType.PISTON, d1 * (double)enumfacing.getXOffset(), d1 * (double)enumfacing.getYOffset(), d1 * (double)enumfacing.getZOffset());
 							MOVING_ENTITY.set(null);
 
 							if (!this.extending && this.shouldHeadBeRendered)
@@ -263,7 +263,7 @@ public class TileEntityMagnetPiston extends TileEntityPiston
 	private AxisAlignedBB moveByPositionAndProgress(AxisAlignedBB p_190607_1_)
 	{
 		double d0 = (double)this.getExtendedProgress(this.progress);
-		return p_190607_1_.offset((double)this.pos.getX() + d0 * (double)this.pistonFacing.getFrontOffsetX(), (double)this.pos.getY() + d0 * (double)this.pistonFacing.getFrontOffsetY(), (double)this.pos.getZ() + d0 * (double)this.pistonFacing.getFrontOffsetZ());
+		return p_190607_1_.offset((double)this.pos.getX() + d0 * (double)this.pistonFacing.getXOffset(), (double)this.pos.getY() + d0 * (double)this.pistonFacing.getYOffset(), (double)this.pos.getZ() + d0 * (double)this.pistonFacing.getZOffset());
 	}
 
 	private AxisAlignedBB getMovementArea(AxisAlignedBB p_190610_1_, EnumFacing p_190610_2_, double p_190610_3_)
@@ -305,7 +305,7 @@ public class TileEntityMagnetPiston extends TileEntityPiston
 			{
 				d0 = Math.min(d0, p_190605_3_) + 0.01D;
 				MOVING_ENTITY.set(facing);
-				entity.move(MoverType.PISTON, d0 * (double)enumfacing.getFrontOffsetX(), d0 * (double)enumfacing.getFrontOffsetY(), d0 * (double)enumfacing.getFrontOffsetZ());
+				entity.move(MoverType.PISTON, d0 * (double)enumfacing.getXOffset(), d0 * (double)enumfacing.getYOffset(), d0 * (double)enumfacing.getZOffset());
 				MOVING_ENTITY.set(null);
 			}
 		}
@@ -384,7 +384,7 @@ public class TileEntityMagnetPiston extends TileEntityPiston
 	{
 		super.readFromNBT(compound);
 		this.pistonState = Block.getBlockById(compound.getInteger("blockId")).getStateFromMeta(compound.getInteger("blockData"));
-		this.pistonFacing = EnumFacing.getFront(compound.getInteger("facing"));
+		this.pistonFacing = EnumFacing.fromAngle(compound.getInteger("facing"));
 		this.progress = compound.getFloat("progress");
 		this.lastProgress = this.progress;
 		this.extending = compound.getBoolean("extending");
@@ -429,9 +429,9 @@ public class TileEntityMagnetPiston extends TileEntityPiston
 			}
 
 			float f = this.getExtendedProgress(this.progress);
-			double d0 = (double)((float)this.pistonFacing.getFrontOffsetX() * f);
-			double d1 = (double)((float)this.pistonFacing.getFrontOffsetY() * f);
-			double d2 = (double)((float)this.pistonFacing.getFrontOffsetZ() * f);
+			double d0 = (double)((float)this.pistonFacing.getXOffset() * f);
+			double d1 = (double)((float)this.pistonFacing.getYOffset() * f);
+			double d2 = (double)((float)this.pistonFacing.getZOffset() * f);
 			iblockstate.addCollisionBoxToList(world, pos, p_190609_3_.offset(-d0, -d1, -d2), p_190609_4_, entity, true);
 
 			for (int j = i; j < p_190609_4_.size(); ++j)

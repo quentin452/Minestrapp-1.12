@@ -61,7 +61,6 @@ public class BlockBiomeRedstoneWire extends Block
     {
         super(Material.CIRCUITS);
         this.setDefaultState(this.blockState.getBaseState().withProperty(NORTH, BlockBiomeRedstoneWire.EnumAttachPosition.NONE).withProperty(EAST, BlockBiomeRedstoneWire.EnumAttachPosition.NONE).withProperty(SOUTH, BlockBiomeRedstoneWire.EnumAttachPosition.NONE).withProperty(WEST, BlockBiomeRedstoneWire.EnumAttachPosition.NONE).withProperty(POWER, Integer.valueOf(0)));
-        this.setUnlocalizedName(name);
         this.setRegistryName(name);
         this.setCreativeTab(MTabs.minerals);
         this.r = r;
@@ -198,7 +197,7 @@ public class BlockBiomeRedstoneWire extends Block
         int j = 0;
         j = this.getMaxCurrentStrength(worldIn, pos2, j);
         this.canProvidePower = false;
-        int k = worldIn.isBlockIndirectlyGettingPowered(pos1);
+        int k = worldIn.getRedstonePowerFromNeighbors(pos1);
         this.canProvidePower = true;
 
         if (k > 0 && k > j - 1)

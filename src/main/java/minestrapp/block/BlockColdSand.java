@@ -32,8 +32,7 @@ public class BlockColdSand extends BlockFalling implements IMetaBlockName
 	{
 		super(material);
 		this.setDefaultState(this.blockState.getBaseState().withProperty(VARIANT, BlockColdSand.EnumType.SAND));
-		this.setUnlocalizedName(name);
-		this.setRegistryName(new ResourceLocation(Minestrapp.MODID, this.getUnlocalizedName().substring(5)));
+		this.setRegistryName(new ResourceLocation(Minestrapp.MODID, this.getTranslationKey().substring(5)));
 		this.setSoundType(soundType);
 		this.setHardness(hardness);
 		this.setHarvestLevel(tool, harvestLevel);

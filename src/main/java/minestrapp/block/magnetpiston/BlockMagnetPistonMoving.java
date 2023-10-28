@@ -80,7 +80,7 @@ public class BlockMagnetPistonMoving extends BlockPistonMoving
 	}
 
 	@Override
-	public void onBlockDestroyedByPlayer(World world, BlockPos pos, IBlockState state)
+	public void onPlayerDestroy(World world, BlockPos pos, IBlockState state)
 	{
 		BlockPos blockpos = pos.offset(((EnumFacing)state.getValue(FACING)).getOpposite());
 		IBlockState iblockstate = world.getBlockState(blockpos);

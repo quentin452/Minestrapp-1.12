@@ -165,7 +165,6 @@ public class BlockActivator extends BlockContainer
 		this.setHarvestLevel("pickaxe", 0);
 		this.setResistance(6F);
 		this.setCreativeTab(MTabs.utility);
-		this.setUnlocalizedName(name);
 		this.setRegistryName(name);
 	}
 	
@@ -300,7 +299,7 @@ public class BlockActivator extends BlockContainer
 	
     public IBlockState getStateFromMeta(int meta)
     {
-        return this.getDefaultState().withProperty(FACING, EnumFacing.getFront(meta & 7)).withProperty(TRIGGERED, Boolean.valueOf((meta & 8) > 0));
+        return this.getDefaultState().withProperty(FACING, EnumFacing.fromAngle(meta & 7)).withProperty(TRIGGERED, Boolean.valueOf((meta & 8) > 0));
     }
     
     public int getMetaFromState(IBlockState state)
@@ -318,7 +317,7 @@ public class BlockActivator extends BlockContainer
     
     public static EnumFacing getFacing(int meta)
     {
-    	return EnumFacing.getFront(meta & 7);
+    	return EnumFacing.fromAngle(meta & 7);
     }
     
     public IBlockState withRotation(IBlockState state, Rotation rot)

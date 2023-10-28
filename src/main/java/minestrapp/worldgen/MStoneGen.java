@@ -36,7 +36,7 @@ public class MStoneGen
 	public static void generate(World world, int chunkX, int chunkZ, Random random)
 	{
 		BlockPos pos = new BlockPos(chunkX * 16, 0, chunkZ * 16);
-		Chunk chunk = world.getChunkFromBlockCoords(pos);
+		Chunk chunk = world.getChunk(pos);
 		BiomeProvider chunkManager = world.getBiomeProvider();
 		IBlockState stone = MBlocks.stone.getDefaultState();
 		EnumStoneTypeMOnly sType = null;

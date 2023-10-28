@@ -170,7 +170,7 @@ public class BlockMagnetPistonBase extends net.minecraft.block.BlockPistonBase
 			worldIn.setBlockState(pos, MBlocks.magnet_piston_extension.getDefaultState().withProperty(BlockMagnetPistonMoving.FACING, enumfacing).withProperty(BlockMagnetPistonMoving.TYPE, this.isSticky ? EnumPistonType.STICKY : EnumPistonType.DEFAULT), 3);
 			worldIn.setTileEntity(pos, BlockMagnetPistonMoving.createTilePiston(this.getStateFromMeta(param), enumfacing, false, true));
 			
-			BlockPos blockpos = pos.add(enumfacing.getFrontOffsetX() * 2, enumfacing.getFrontOffsetY() * 2, enumfacing.getFrontOffsetZ() * 2);
+			BlockPos blockpos = pos.add(enumfacing.getXOffset() * 2, enumfacing.getYOffset() * 2, enumfacing.getZOffset() * 2);
 			IBlockState iblockstate = worldIn.getBlockState(blockpos);
 			Block block = iblockstate.getBlock();
 			boolean flag1 = false;
@@ -189,7 +189,7 @@ public class BlockMagnetPistonBase extends net.minecraft.block.BlockPistonBase
 				}
 			}
 
-			if (!flag1 && !iblockstate.getBlock().isAir(iblockstate, worldIn, blockpos) && canPush(iblockstate, worldIn, blockpos, enumfacing.getOpposite(), false, enumfacing) && (iblockstate.getMobilityFlag() == EnumPushReaction.NORMAL || block instanceof net.minecraft.block.BlockPistonBase))
+			if (!flag1 && !iblockstate.getBlock().isAir(iblockstate, worldIn, blockpos) && canPush(iblockstate, worldIn, blockpos, enumfacing.getOpposite(), false, enumfacing) && (iblockstate.getPushReaction() == EnumPushReaction.NORMAL || block instanceof net.minecraft.block.BlockPistonBase))
 			{
 				this.doMove(worldIn, pos, enumfacing, false);
 			}
@@ -224,8 +224,7 @@ public class BlockMagnetPistonBase extends net.minecraft.block.BlockPistonBase
 						return false;
 					}
 
-					switch (state.getMobilityFlag())
-					{
+					switch (state.getPushReaction()) {
 						case BLOCK:
 							return false;
 						case DESTROY:

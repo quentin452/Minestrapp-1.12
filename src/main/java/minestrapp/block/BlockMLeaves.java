@@ -408,6 +408,6 @@ public class BlockMLeaves extends BlockBaseNonSolid implements IShearable, IMeta
 	@Override
 	public String getSpecialName(ItemStack stack)
 	{
-		return this.getUnlocalizedName() + "_" + BlockMPlanks.EnumType.byMetadata(stack.getMetadata()).getName();
+		return this.getTranslationKey() + "_" + BlockMPlanks.EnumType.byMetadata(stack.getMetadata()).getName();
 	}
 }

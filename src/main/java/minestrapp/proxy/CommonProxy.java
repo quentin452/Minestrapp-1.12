@@ -150,7 +150,7 @@ public class CommonProxy
 
         blockpos$pooledmutableblockpos.release();
 
-        if (vec3d.lengthVector() > 0.0D && entityIn.isPushedByWater())
+        if (vec3d.length() > 0.0D && entityIn.isPushedByWater())
         {
 //         // DEBUG
 //         System.out.println("motion vector is non-zero");

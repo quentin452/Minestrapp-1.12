@@ -14,7 +14,6 @@ public class CabbagePlant extends BlockCrops {
 
 	
 	public CabbagePlant(String unlocalizedName){
-		this.setUnlocalizedName(unlocalizedName);
 		this.setRegistryName(new ResourceLocation(Minestrapp.MODID, unlocalizedName));
 	}
 	

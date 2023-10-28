@@ -8,7 +8,7 @@ public class BlockHalfStoneSlab2 extends BlockStoneSlab2
 	public BlockHalfStoneSlab2(String name)
 	{
 		super(name);
-		this.setRegistryName(new ResourceLocation(Minestrapp.MODID, this.getUnlocalizedName().substring(5)));
+		this.setRegistryName(new ResourceLocation(Minestrapp.MODID, this.getTranslationKey().substring(5)));
 	}
 
 	@Override

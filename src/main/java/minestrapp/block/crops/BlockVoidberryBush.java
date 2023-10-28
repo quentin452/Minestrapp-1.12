@@ -44,7 +44,6 @@ public class BlockVoidberryBush extends BlockBush implements IGrowable
 	
 	public BlockVoidberryBush(String name)
 	{
-		this.setUnlocalizedName(name);
 		this.setRegistryName(name);
 		this.setDefaultState(this.blockState.getBaseState().withProperty(this.getAgeProperty(), Integer.valueOf(0)).withProperty(STEM, true));
 		this.setTickRandomly(true);

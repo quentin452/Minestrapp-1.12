@@ -50,9 +50,9 @@ public class MGenRockCrystal extends WorldGenerator
 	                        	for(int q = 0 ; q < EnumFacing.VALUES.length ; q++)
 	                        	{
 
-	                        		if(canGenerateBlock(worldIn, blockpos, EnumFacing.getFront(q)))
+	                        		if(canGenerateBlock(worldIn, blockpos, EnumFacing.fromAngle(q)))
 	                        		{
-	                        			worldIn.setBlockState(blockpos, MBlocks.rock_crystal_deposit.getDefaultState().withProperty(BlockOreDeposit.FACING, EnumFacing.getFront(q)), 2);
+	                        			worldIn.setBlockState(blockpos, MBlocks.rock_crystal_deposit.getDefaultState().withProperty(BlockOreDeposit.FACING, EnumFacing.fromAngle(q)), 2);
 	                        			break;
 	                        		}
 	                        	}

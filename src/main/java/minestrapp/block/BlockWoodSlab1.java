@@ -46,7 +46,6 @@ public abstract class BlockWoodSlab1 extends BlockSlab implements IMetaBlockName
         }
 
         this.setDefaultState(iblockstate.withProperty(VARIANT, BlockWoodSlab1.EnumType.REDWOOD));
-        this.setUnlocalizedName(name);
         this.setCreativeTab(MTabs.wood);
         this.useNeighborBrightness = true;
         this.setHardness(2F);
@@ -144,7 +143,7 @@ public abstract class BlockWoodSlab1 extends BlockSlab implements IMetaBlockName
     }
 
 	@Override
-	public String getUnlocalizedName(int meta)
+	public String getTranslationKey(int meta)
 	{
 		return BlockWoodSlab1.EnumType.byMetadata(meta).getName();
 	}

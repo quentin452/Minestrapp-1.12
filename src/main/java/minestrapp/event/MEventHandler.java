@@ -727,7 +727,7 @@ public class MEventHandler
 				event.getTable().addPool(candy_pool);
 			}
 			
-			if(event.getName().getResourcePath().startsWith("chests/"))
+			if(event.getName().getPath().startsWith("chests/"))
 			{
 				LootEntry halloween_entry = new LootEntryTable(new ResourceLocation(Minestrapp.MODID + ":dungeon/halloween"), 1, 1, new LootCondition[0], "halloween_chest_loot");
 		    	LootPool halloween_pool = new LootPool(new LootEntry[] {halloween_entry}, new LootCondition[0], new RandomValueRange(1), new RandomValueRange(0, 1), "halloween_chest_pool");
@@ -885,7 +885,7 @@ public class MEventHandler
 		//New Year
 		if((calendar.get(2) + 1 == 12 && calendar.get(5) >= 26 && calendar.get(5) <= 31) || (calendar.get(2) + 1 == 1 && calendar.get(5) >= 0 && calendar.get(5) <= 7))
 		{
-			if(event.getName().getResourcePath().startsWith("chests/"))
+			if(event.getName().getPath().startsWith("chests/"))
 			{
 				LootEntry new_year_entry = new LootEntryTable(new ResourceLocation(Minestrapp.MODID + ":dungeon/new_year"), 1, 1, new LootCondition[0], "new_year_chest_loot");
 		    	LootPool new_year_pool = new LootPool(new LootEntry[] {new_year_entry}, new LootCondition[0], new RandomValueRange(1), new RandomValueRange(0, 1), "new_year_chest_pool");

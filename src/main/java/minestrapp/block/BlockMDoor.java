@@ -24,7 +24,6 @@ public class BlockMDoor extends BlockDoor
 	public BlockMDoor(String name, Material material, MapColor color)
 	{
 		super(material);
-		this.setUnlocalizedName(name);
 		this.setRegistryName(name);
 		this.mapColor = color;
 		this.setHardness(3F);

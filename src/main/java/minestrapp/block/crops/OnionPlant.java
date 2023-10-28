@@ -14,7 +14,6 @@ public class OnionPlant extends BlockCrops {
 
 	
 	public OnionPlant(String unlocalizedName){
-		this.setUnlocalizedName(unlocalizedName);
 		this.setRegistryName(new ResourceLocation(Minestrapp.MODID, unlocalizedName));
 	}
 	

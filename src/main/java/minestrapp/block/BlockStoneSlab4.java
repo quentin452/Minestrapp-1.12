@@ -45,7 +45,6 @@ public abstract class BlockStoneSlab4 extends BlockSlab implements IMetaBlockNam
         }
 
         this.setDefaultState(iblockstate.withProperty(VARIANT, BlockStoneSlab4.EnumType.GLACIERROCK_BRICKS));
-        this.setUnlocalizedName(name);
         this.setCreativeTab(MTabs.stone);
         this.useNeighborBrightness = true;
         this.setHardness(2F);
@@ -167,7 +166,7 @@ public abstract class BlockStoneSlab4 extends BlockSlab implements IMetaBlockNam
     }
 
 	@Override
-	public String getUnlocalizedName(int meta)
+	public String getTranslationKey(int meta)
 	{
 		return BlockStoneSlab4.EnumType.byMetadata(meta).getName();
 	}

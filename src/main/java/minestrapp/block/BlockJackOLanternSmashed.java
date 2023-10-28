@@ -56,17 +56,33 @@ public class BlockJackOLanternSmashed extends BlockJackOLantern
 		if(this.type == "unlit")
 			tab.add(new ItemStack(this, 1, 0));
     }
-	
+
 	public IBlockState getStateForPlacement(World worldIn, BlockPos pos, EnumFacing facing, float hitX, float hitY, float hitZ, int meta, EntityLivingBase placer)
-    {
-    	return this.getDefaultState().withProperty(FACING, placer.getHorizontalFacing().getOpposite());
-    }
-	
-	public IBlockState getStateFromMeta(int meta)
-    {
-        return this.getDefaultState().withProperty(FACING, EnumFacing.getHorizontal(meta));
-    }
-	
+	{
+		if (facing.getAxis() == EnumFacing.Axis.Y)
+		{
+			// L'orientation n'est pas horizontale, utilisez l'orientation par défaut.
+			return this.getDefaultState().withProperty(FACING, EnumFacing.NORTH);
+		}
+		else
+		{
+			// L'orientation est horizontale, utilisez l'orientation fournie par le placer.
+			return this.getDefaultState().withProperty(FACING, facing.getOpposite());
+		}
+	}
+
+	public IBlockState getStateFromMeta(int meta) {
+
+		EnumFacing facing = EnumFacing.byIndex(meta % 4);
+
+		if(facing == null || !facing.getAxis().isHorizontal()) {
+			facing = EnumFacing.NORTH;
+		}
+
+		return this.getDefaultState().withProperty(FACING, facing);
+
+	}
+
 	public int getMetaFromState(IBlockState state)
     {
         return ((EnumFacing)state.getValue(FACING)).getHorizontalIndex();
@@ -94,48 +110,37 @@ public class BlockJackOLanternSmashed extends BlockJackOLantern
     public Block getFire() {return this.fire;}
     
     public Block getEnder() {return this.ender;}
-	
-	public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ)
-    {
+
+	public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
 		ItemStack itemstack = playerIn.getHeldItem(hand);
-		
-		if (!playerIn.canPlayerEdit(pos.offset(facing), facing, itemstack))
-        {
-            return false;
-        }
-		else if(this.type == "unlit" && itemstack.getItem() instanceof ItemFlintAndSteel)
-		{
-			if(!worldIn.isRemote)
-			{
-				EnumFacing direction = worldIn.getBlockState(pos).getValue(FACING);
-				worldIn.setBlockState(pos, MBlocks.pumpkin_smashed_fire.getDefaultState().withProperty(FACING, direction), 2);
-				itemstack.damageItem(1, playerIn);
+
+		if (!playerIn.canPlayerEdit(pos.offset(facing), facing, itemstack)) {
+			return false;
+		} else if (this.type == "unlit" && (itemstack.getItem() instanceof ItemFlintAndSteel || itemstack.getItem() == Items.DRAGON_BREATH)) {
+			if (!worldIn.isRemote) {
+				EnumFacing direction = state.getValue(FACING);
+				worldIn.setBlockState(pos, this.getDefaultState().withProperty(FACING, direction), 2);
+
+				if (itemstack.getItem() instanceof ItemFlintAndSteel) {
+					itemstack.damageItem(1, playerIn);
+				} else if (itemstack.getItem() == Items.DRAGON_BREATH) {
+					itemstack.shrink(1);
+					worldIn.spawnEntity(new EntityItem(worldIn, playerIn.posX, playerIn.posY, playerIn.posZ, new ItemStack(Items.GLASS_BOTTLE, 1)));
+				}
 			}
 			return true;
-		}
-		else if(this.type == "unlit" && itemstack.getItem() == Items.DRAGON_BREATH)
-		{
-			if(!worldIn.isRemote)
-			{
-				EnumFacing direction = worldIn.getBlockState(pos).getValue(FACING);
-				worldIn.setBlockState(pos, MBlocks.pumpkin_smashed_ender.getDefaultState().withProperty(FACING, direction), 2);
+		} else if ((this.type == "fire" || this.type == "ender") && itemstack.getItem() == Items.POTIONITEM) {
+			if (!worldIn.isRemote) {
+				EnumFacing direction = state.getValue(FACING);
+				worldIn.setBlockState(pos, this.getDefaultState().withProperty(FACING, direction), 2);
+
 				itemstack.shrink(1);
 				worldIn.spawnEntity(new EntityItem(worldIn, playerIn.posX, playerIn.posY, playerIn.posZ, new ItemStack(Items.GLASS_BOTTLE, 1)));
 			}
 			return true;
 		}
-		else if((this.type == "fire" || this.type == "ender") && itemstack.getItem() == Items.POTIONITEM)
-		{
-			if(!worldIn.isRemote)
-			{
-				EnumFacing direction = worldIn.getBlockState(pos).getValue(FACING);
-				worldIn.setBlockState(pos, MBlocks.pumpkin_smashed.getDefaultState().withProperty(FACING, direction), 2);
-				itemstack.shrink(1);
-				worldIn.spawnEntity(new EntityItem(worldIn, playerIn.posX, playerIn.posY, playerIn.posZ, new ItemStack(Items.GLASS_BOTTLE, 1)));
-			}
-			return true;
-		}
-		
+
 		return false;
-    }
+	}
+
 }

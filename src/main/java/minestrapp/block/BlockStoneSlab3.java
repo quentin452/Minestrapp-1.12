@@ -45,7 +45,6 @@ public abstract class BlockStoneSlab3 extends BlockSlab implements IMetaBlockNam
         }
 
         this.setDefaultState(iblockstate.withProperty(VARIANT, BlockStoneSlab3.EnumType.OCEANSTONE_COBBLED));
-        this.setUnlocalizedName(name);
         this.setCreativeTab(MTabs.stone);
         this.useNeighborBrightness = true;
         this.setHardness(2F);
@@ -167,7 +166,7 @@ public abstract class BlockStoneSlab3 extends BlockSlab implements IMetaBlockNam
     }
 
 	@Override
-	public String getUnlocalizedName(int meta)
+	public String getTranslationKey(int meta)
 	{
 		return BlockStoneSlab3.EnumType.byMetadata(meta).getName();
 	}

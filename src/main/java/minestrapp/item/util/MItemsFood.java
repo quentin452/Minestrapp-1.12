@@ -37,7 +37,6 @@ public class MItemsFood extends ItemFood
 	public MItemsFood(int amount, float saturation, boolean isWolfFood, String string)
 	{
 		super(amount, saturation, isWolfFood);
-        this.setUnlocalizedName(string);
         this.setRegistryName(string);
         this.setCreativeTab(MTabs.food);
         this.droppedItem = null;

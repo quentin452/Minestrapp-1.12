@@ -228,8 +228,9 @@ public class BlockSawmill extends BlockBase implements ITileEntityProvider
 	
 	public IBlockState getStateFromMeta(int meta)
     {
-		return this.getDefaultState().withProperty(FACING, EnumFacing.getFront(meta & 7)).withProperty(STOPPED, Boolean.valueOf((meta & 8) > 0));
-    }
+		return this.getDefaultState()
+				.withProperty(FACING, EnumFacing.byIndex(meta & 7))
+				.withProperty(STOPPED, Boolean.valueOf((meta & 8) > 0));    }
     
     public int getMetaFromState(IBlockState state)
     {
@@ -241,9 +242,10 @@ public class BlockSawmill extends BlockBase implements ITileEntityProvider
 
         return i;
     }
-    
-    public static EnumFacing getFacing(int meta) { return EnumFacing.getFront(meta & 7); }
-    
+
+	public static EnumFacing getFacing(int meta) {
+		return EnumFacing.byIndex(meta & 7);
+	}
     public IBlockState withRotation(IBlockState state, Rotation rot) { return state.withProperty(FACING, rot.rotate((EnumFacing)state.getValue(FACING))); }
     
     public IBlockState withMirror(IBlockState state, Mirror mirrorIn) { return state.withRotation(mirrorIn.toRotation((EnumFacing)state.getValue(FACING))); }

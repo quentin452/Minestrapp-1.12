@@ -21,7 +21,6 @@ public class MItemsSeeds extends ItemSeeds
 	public MItemsSeeds(Block crops, Block soil, String string)
 	{
 		super(crops, soil);
-        this.setUnlocalizedName(string);
         this.setRegistryName(string);
         this.setCreativeTab(MTabs.plant);
 	}

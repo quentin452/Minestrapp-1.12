@@ -422,7 +422,7 @@ public class TileEntitySorter extends TileEntityLockableLoot implements IHopper,
 	        enumfacing = BlockSorter.getFacing(this.getBlockMetadata());
 		}
 			
-        return getInventoryAtPosition(this.getWorld(), this.getXPos() + (double)enumfacing.getFrontOffsetX(), this.getYPos() + (double)enumfacing.getFrontOffsetY(), this.getZPos() + (double)enumfacing.getFrontOffsetZ());
+        return getInventoryAtPosition(this.getWorld(), this.getXPos() + (double)enumfacing.getXOffset(), this.getYPos() + (double)enumfacing.getYOffset(), this.getZPos() + (double)enumfacing.getZOffset());
     }
 	
 	public static IInventory getInventoryAtPosition(World worldIn, double x, double y, double z)

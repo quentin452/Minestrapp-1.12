@@ -53,13 +53,13 @@ public class ItemTannic extends MItemBowlFood implements IItemVariants
 	        }
 		}
 	}
-	
+
 	@Override
-	public String getUnlocalizedName(ItemStack stack)
+	public String getTranslationKey(ItemStack stack)
 	{
-		return super.getUnlocalizedName(stack) + "_" + stack.getItemDamage();
+		return super.getTranslationKey(stack) + "_" + stack.getMetadata();
 	}
-	
+
 	@Override
 	public int getMaxVariants()
 	{

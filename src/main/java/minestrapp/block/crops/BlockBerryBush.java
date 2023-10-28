@@ -44,7 +44,6 @@ public class BlockBerryBush extends BlockBush implements IGrowable
 	
 	public BlockBerryBush(String name, MapColor mapColor, String terrain)
 	{
-		this.setUnlocalizedName(name);
 		this.setRegistryName(name);
 		this.setDefaultState(this.blockState.getBaseState().withProperty(this.getAgeProperty(), Integer.valueOf(0)));
 		this.setTickRandomly(true);
@@ -74,7 +73,7 @@ public class BlockBerryBush extends BlockBush implements IGrowable
 		if(this == MBlocks.mana_bush)
 			return BlockRenderLayer.TRANSLUCENT;
 		else
-			return super.getBlockLayer();
+			return super.getRenderLayer();
     }
 	
 	public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos)

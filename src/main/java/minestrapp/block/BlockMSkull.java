@@ -167,7 +167,7 @@ public class BlockMSkull extends BlockBase implements ITileEntityProvider
     
     public IBlockState getStateFromMeta(int meta)
     {
-        return this.getDefaultState().withProperty(FACING, EnumFacing.getFront(meta & 7)).withProperty(WALL, Boolean.valueOf((meta & 8) > 0));
+        return this.getDefaultState().withProperty(FACING, EnumFacing.fromAngle(meta & 7)).withProperty(WALL, Boolean.valueOf((meta & 8) > 0));
     }
     
     public int getMetaFromState(IBlockState state)

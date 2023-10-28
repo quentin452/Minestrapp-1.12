@@ -225,18 +225,18 @@ public class LiquidCrystalfloe extends BlockFluidClassic
                        if (j >= 0)
                        {
                            int k = j - (i - 8);
-                           d0 += enumfacing.getFrontOffsetX() * k;
-                           d1 += enumfacing.getFrontOffsetY() * k;
-                           d2 += enumfacing.getFrontOffsetZ() * k;
+                           d0 += enumfacing.getXOffset() * k;
+                           d1 += enumfacing.getYOffset() * k;
+                           d2 += enumfacing.getZOffset() * k;
                        }
                    }
                }
                else if (j >= 0)
                {
                    int l = j - i;
-                   d0 += enumfacing.getFrontOffsetX() * l;
-                   d1 += enumfacing.getFrontOffsetY() * l;
-                   d2 += enumfacing.getFrontOffsetZ() * l;
+                   d0 += enumfacing.getXOffset() * l;
+                   d1 += enumfacing.getYOffset() * l;
+                   d2 += enumfacing.getZOffset() * l;
                }
            }
 
@@ -256,7 +256,7 @@ public class LiquidCrystalfloe extends BlockFluidClassic
 //                    // DEBUG
 //                    System.out.println("Causes downward current");
                     
-                       vec3d = vec3d.normalize().addVector(0.0D, -6.0D, 0.0D);
+                       vec3d = vec3d.normalize().add(0.0D, -6.0D, 0.0D);
                        break;
                    }
                }
@@ -266,10 +266,10 @@ public class LiquidCrystalfloe extends BlockFluidClassic
            return vec3d.normalize();
        }
 
-       protected int getDepth(IBlockState state)
-       {
-           return state.getMaterial() == this.blockMaterial ? state.getValue(LEVEL).intValue() : -1;
-       }
+    protected int getDepth(IBlockState state) {
+        return state.getBlock() == this ?
+                state.getValue(LEVEL).intValue() : -1;
+    }
 
        protected int getRenderedDepth(IBlockState state)
        {
@@ -287,8 +287,7 @@ public class LiquidCrystalfloe extends BlockFluidClassic
            Block block = iblockstate.getBlock();
            Material material = iblockstate.getMaterial();
 
-           if (material == this.blockMaterial)
-           {
+           if (iblockstate.getBlock() == this) {
                return false;
            }
            else if (side == EnumFacing.UP)

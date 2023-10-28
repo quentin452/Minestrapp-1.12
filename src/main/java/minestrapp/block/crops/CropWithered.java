@@ -22,7 +22,6 @@ public class CropWithered extends BlockBush implements IPlantable
 	
 	public CropWithered(String unlocalizedName)
 	{
-		this.setUnlocalizedName(unlocalizedName);
 		this.setRegistryName(new ResourceLocation(Minestrapp.MODID, unlocalizedName));
 		this.setCreativeTab((CreativeTabs)null);
 		this.setHardness(0.0F);

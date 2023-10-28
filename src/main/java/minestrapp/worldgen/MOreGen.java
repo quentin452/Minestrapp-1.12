@@ -76,7 +76,7 @@ public class MOreGen implements IWorldGenerator
 		int heightDiff = maxHeight - minHeight + 1;
 		if(biomeSpecific == true && generator instanceof MGenMinable)
 		{
-			Chunk chunk = world.getChunkFromChunkCoords(chunkX, chunkZ);
+			Chunk chunk = world.getChunk(chunkX, chunkZ);
 			BiomeProvider chunkManager = world.getBiomeProvider();
 			IBlockState state = ((MGenMinable) generator).getOreState();
 			int count = ((MGenMinable)generator).getBlockCount();

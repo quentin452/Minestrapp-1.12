@@ -8,7 +8,7 @@ public class BlockDoubleWoodSlab1 extends BlockWoodSlab1
 	public BlockDoubleWoodSlab1(String name)
 	{
 		super(name);
-		this.setRegistryName(new ResourceLocation(Minestrapp.MODID, this.getUnlocalizedName().substring(5) + "_double"));
+		this.setRegistryName(new ResourceLocation(Minestrapp.MODID, this.getTranslationKey().substring(5) + "_double"));
 	}
 
 	@Override
