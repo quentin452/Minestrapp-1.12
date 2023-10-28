@@ -14,6 +14,7 @@ public class CeleryPlant extends BlockCrops {
 
 	
 	public CeleryPlant(String unlocalizedName){
+		this.setTranslationKey(unlocalizedName);
 		this.setRegistryName(new ResourceLocation(Minestrapp.MODID, unlocalizedName));
 	}
 	

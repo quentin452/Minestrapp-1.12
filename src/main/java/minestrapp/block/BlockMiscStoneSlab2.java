@@ -46,6 +46,7 @@ public abstract class BlockMiscStoneSlab2 extends BlockSlab implements IMetaBloc
         }
 
         this.setDefaultState(iblockstate.withProperty(VARIANT, BlockMiscStoneSlab2.EnumType.SHIMMERSTONE_BRICKS));
+        this.setTranslationKey(name);
         this.setCreativeTab(MTabs.stone);
         this.useNeighborBrightness = true;
         this.setHardness(2F);

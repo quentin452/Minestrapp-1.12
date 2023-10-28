@@ -49,6 +49,7 @@ public class MDagger extends Item
         this.setMaxDamage(material.getMaxUses());
         this.attackDamage = 1.5F + (material.getAttackDamage() / 2F);
         this.burnTime = 0;
+        this.setTranslationKey(unlocalizedName);
         this.setRegistryName(unlocalizedName);
         this.setCreativeTab(MTabs.combat);
     }

@@ -44,7 +44,6 @@ public abstract class BlockWoodSlab1 extends BlockSlab implements IMetaBlockName
         {
             iblockstate = iblockstate.withProperty(HALF, BlockSlab.EnumBlockHalf.BOTTOM);
         }
-
         this.setDefaultState(iblockstate.withProperty(VARIANT, BlockWoodSlab1.EnumType.REDWOOD));
         this.setCreativeTab(MTabs.wood);
         this.useNeighborBrightness = true;

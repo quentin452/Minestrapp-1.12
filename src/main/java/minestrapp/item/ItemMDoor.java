@@ -12,6 +12,7 @@ public class ItemMDoor extends ItemDoor
 	public ItemMDoor(Block block)
 	{
 		super(block);
+		this.setTranslationKey(block.getTranslationKey().substring(5));
 		this.setRegistryName(block.getLocalizedName().substring(5));
 		this.door = block;
 	}

@@ -45,6 +45,7 @@ public abstract class BlockMiscStoneSlab3 extends BlockSlab implements IMetaBloc
         }
 
         this.setDefaultState(iblockstate.withProperty(VARIANT, BlockMiscStoneSlab3.EnumType.COLD_RED_SANDSTONE_BRICKS));
+        this.setTranslationKey(name);
         this.setCreativeTab(MTabs.stone);
         this.useNeighborBrightness = true;
         this.setHardness(2F);

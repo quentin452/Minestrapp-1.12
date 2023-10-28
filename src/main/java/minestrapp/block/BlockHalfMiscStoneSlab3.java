@@ -8,6 +8,7 @@ public class BlockHalfMiscStoneSlab3 extends BlockMiscStoneSlab3
 	public BlockHalfMiscStoneSlab3(String name)
 	{
 		super(name);
+		this.setTranslationKey(name);
 		this.setRegistryName(new ResourceLocation(Minestrapp.MODID, this.getTranslationKey().substring(5)));
 	}
 

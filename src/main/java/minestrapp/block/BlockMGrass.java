@@ -52,6 +52,7 @@ public class BlockMGrass extends BlockBase  implements IGrowable
 	{
 		super(name, Material.GRASS, mapColor, soundType, hardness, "shovel", harvestLevel);
 		this.setDefaultState(this.blockState.getBaseState().withProperty(SNOWY, Boolean.valueOf(false)));
+        this.setTranslationKey(name);
 		this.setTickRandomly(true);
         this.setCreativeTab(MTabs.environment);
         this.dirt = dirt;

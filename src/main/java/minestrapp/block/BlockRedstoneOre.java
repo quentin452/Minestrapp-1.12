@@ -33,7 +33,8 @@ public class BlockRedstoneOre extends BlockStoneBaseMOnly
 
         if (isOn == false)
         {
-			this.setRegistryName(new ResourceLocation(Minestrapp.MODID, this.getTranslationKey().substring(5)));
+            this.setTranslationKey(name);
+            this.setRegistryName(new ResourceLocation(Minestrapp.MODID, this.getTranslationKey().substring(5)));
         }
 		else
 		{

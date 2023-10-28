@@ -46,6 +46,7 @@ public class BlockMDirt extends Block implements IMetaBlockName
 	{
 		super(Material.GROUND);
 		this.setDefaultState(this.blockState.getBaseState().withProperty(VARIANT, BlockMDirt.DirtType.DEFAULT).withProperty(SNOWY, Boolean.valueOf(false)));
+        this.setTranslationKey(name);
 		this.setRegistryName(new ResourceLocation(Minestrapp.MODID, this.getTranslationKey().substring(5)));
 		this.setSoundType(soundType);
 		this.setHardness(hardness);

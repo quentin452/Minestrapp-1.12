@@ -15,6 +15,7 @@ public class BlockStairBase extends BlockStairs
 	public BlockStairBase(Block modelState)
 	{
 		super(modelState.getDefaultState());
+		this.setTranslationKey(modelState.getTranslationKey().substring(5) + "_stairs");
 		this.setRegistryName(modelState.getTranslationKey().substring(5) + "_stairs");
 		this.useNeighborBrightness = true;
 		this.setCreativeTab(modelState.getCreativeTab());
@@ -23,6 +24,7 @@ public class BlockStairBase extends BlockStairs
 	public BlockStairBase(IBlockState modelState, String unlocalized)
 	{
 		super(modelState);
+		this.setTranslationKey(unlocalized.substring(5) + "_stairs");
 		this.setRegistryName(unlocalized.substring(5) + "_stairs");
 		this.useNeighborBrightness = true;
 		this.setCreativeTab(modelState.getBlock().getCreativeTab());

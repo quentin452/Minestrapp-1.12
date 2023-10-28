@@ -14,6 +14,7 @@ public class PepperPlant extends BlockCrops {
 
 	
 	public PepperPlant(String unlocalizedName){
+		this.setTranslationKey(unlocalizedName);
 		this.setRegistryName(new ResourceLocation(Minestrapp.MODID, unlocalizedName));
 	}
 	

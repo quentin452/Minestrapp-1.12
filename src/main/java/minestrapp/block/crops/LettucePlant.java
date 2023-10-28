@@ -14,6 +14,7 @@ public class LettucePlant extends BlockCrops {
 
 	
 	public LettucePlant(String unlocalizedName){
+		this.setTranslationKey(unlocalizedName);
 		this.setRegistryName(new ResourceLocation(Minestrapp.MODID, unlocalizedName));
 	}
 	
