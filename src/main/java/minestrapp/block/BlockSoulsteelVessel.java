@@ -63,7 +63,8 @@ public class BlockSoulsteelVessel extends BlockContainer
 		this.setHarvestLevel("pickaxe", 0);
 		this.setSoundType(SoundType.METAL);
 		this.setDefaultState(this.blockState.getBaseState().withProperty(LEVEL, Integer.valueOf(0)).withProperty(FACING, EnumFacing.NORTH));
-		this.setRegistryName("soulsteel_vessel");
+        this.setTranslationKey("soulsteel_vessel");
+        this.setRegistryName("soulsteel_vessel");
 	}
 	
 	public void addCollisionBoxToList(IBlockState state, World worldIn, BlockPos pos, AxisAlignedBB entityBox, List<AxisAlignedBB> collidingBoxes, @Nullable Entity entityIn, boolean p_185477_7_)

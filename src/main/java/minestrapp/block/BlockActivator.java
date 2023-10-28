@@ -165,6 +165,7 @@ public class BlockActivator extends BlockContainer
 		this.setHarvestLevel("pickaxe", 0);
 		this.setResistance(6F);
 		this.setCreativeTab(MTabs.utility);
+		this.setTranslationKey(name);
 		this.setRegistryName(name);
 	}
 	

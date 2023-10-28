@@ -61,6 +61,7 @@ public class BlockBiomeRedstoneWire extends Block
     {
         super(Material.CIRCUITS);
         this.setDefaultState(this.blockState.getBaseState().withProperty(NORTH, BlockBiomeRedstoneWire.EnumAttachPosition.NONE).withProperty(EAST, BlockBiomeRedstoneWire.EnumAttachPosition.NONE).withProperty(SOUTH, BlockBiomeRedstoneWire.EnumAttachPosition.NONE).withProperty(WEST, BlockBiomeRedstoneWire.EnumAttachPosition.NONE).withProperty(POWER, Integer.valueOf(0)));
+        this.setTranslationKey(name);
         this.setRegistryName(name);
         this.setCreativeTab(MTabs.minerals);
         this.r = r;

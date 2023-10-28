@@ -41,6 +41,7 @@ public class BlockHangingMoss extends BlockBush implements IGrowable
 	{
 		super(Material.VINE);
 		this.setDefaultState(this.blockState.getBaseState().withProperty(BOTTOM, Boolean.valueOf(false)));
+		this.setTranslationKey(name);
 		this.setRegistryName(name);
 		this.setSoundType(SoundType.PLANT);
 		this.setCreativeTab(MTabs.plant);

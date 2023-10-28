@@ -43,8 +43,8 @@ public abstract class BlockStoneSlab3 extends BlockSlab implements IMetaBlockNam
         {
             iblockstate = iblockstate.withProperty(HALF, BlockSlab.EnumBlockHalf.BOTTOM);
         }
-
         this.setDefaultState(iblockstate.withProperty(VARIANT, BlockStoneSlab3.EnumType.OCEANSTONE_COBBLED));
+        this.setTranslationKey(name);
         this.setCreativeTab(MTabs.stone);
         this.useNeighborBrightness = true;
         this.setHardness(2F);

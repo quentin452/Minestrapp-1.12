@@ -37,6 +37,7 @@ public class BlockStoneCutter extends BlockContainer
 		this.setHarvestLevel("pickaxe", 0);
 		this.setSoundType(SoundType.STONE);
 		this.setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.NORTH));
+        this.setTranslationKey("stonecutter");
 		this.setRegistryName("stonecutter");
 	}
     protected BlockStateContainer createBlockState()

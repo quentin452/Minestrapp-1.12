@@ -50,6 +50,7 @@ public class BlockClutchthorn extends BlockBush implements IGrowable
 	{
 		super(Material.VINE);
 		this.setDefaultState(this.blockState.getBaseState().withProperty(SECTION, BlockClutchthorn.EnumThornSection.DEFAULT).withProperty(GLOWING, Boolean.valueOf(false)));
+        this.setTranslationKey("clutchthorn");
 		this.setRegistryName("clutchthorn");
 		this.setHardness(0.2F);
 		this.setSoundType(SoundType.PLANT);

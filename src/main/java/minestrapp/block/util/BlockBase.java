@@ -59,6 +59,7 @@ public class BlockBase extends Block
 	public BlockBase(String name, Material material, MapColor mapColor, SoundType soundType, float hardness)
 	{
 		super(material);
+		this.setTranslationKey(name);
 		this.setRegistryName(name);
 		this.mapColor = mapColor;
 		this.setSoundType(soundType);

@@ -45,6 +45,7 @@ public abstract class BlockStoneSlab1 extends BlockSlab implements IMetaBlockNam
         }
 
         this.setDefaultState(iblockstate.withProperty(VARIANT, BlockStoneSlab1.EnumType.RED_ROCK_SMOOTH));
+        this.setTranslationKey(name);
         this.setCreativeTab(MTabs.stone);
         this.useNeighborBrightness = true;
         this.setHardness(2F);

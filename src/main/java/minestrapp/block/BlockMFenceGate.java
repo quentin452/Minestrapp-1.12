@@ -19,6 +19,7 @@ public class BlockMFenceGate extends BlockFenceGate
 	{
 		super(BlockPlanks.EnumType.OAK);
 		String name = type.getUnlocalizedName() + "_fence_gate";
+		this.setTranslationKey(name);
 		this.setRegistryName(name);
 		this.setHardness(2F);
 		this.setResistance(5F);

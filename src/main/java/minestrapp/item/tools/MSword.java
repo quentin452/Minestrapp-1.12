@@ -28,6 +28,7 @@ public class MSword extends ItemSword
 	{
 		super(material);
 		this.material = material;
+		this.setTranslationKey(name);
 		this.setRegistryName(name);
 		this.setCreativeTab(MTabs.combat);
 	}

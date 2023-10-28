@@ -28,6 +28,7 @@ public class ItemSmellingSalts extends Item
 {
 	public ItemSmellingSalts()
 	{
+        this.setTranslationKey("smelling_salts");
 		this.setRegistryName("smelling_salts");
 		this.setCreativeTab(MTabs.minerals);
 	}

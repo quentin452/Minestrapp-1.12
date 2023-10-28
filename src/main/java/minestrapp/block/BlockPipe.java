@@ -59,6 +59,7 @@ public class BlockPipe extends BlockContainer
 		this.setHarvestLevel("pickaxe", deep ? 1 : 0);
 		this.setResistance(6F);
 		this.setCreativeTab(MTabs.utility);
+        this.setTranslationKey(name);
 		this.setRegistryName(name);
 		this.setOverridableDefaultState();
 		this.covered = covered;

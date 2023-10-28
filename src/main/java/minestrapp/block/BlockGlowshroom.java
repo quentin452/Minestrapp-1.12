@@ -28,6 +28,7 @@ public class BlockGlowshroom extends BlockBush implements IGrowable
 	public BlockGlowshroom(String name)
     {
         this.setTickRandomly(true);
+        this.setTranslationKey(name);
 		this.setRegistryName(name);
 		this.setSoundType(SoundType.PLANT);
 		this.setCreativeTab(MTabs.plant);

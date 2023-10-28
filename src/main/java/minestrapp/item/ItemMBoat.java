@@ -28,6 +28,7 @@ public class ItemMBoat extends Item
     {
     	this.type = typeIn;
     	this.maxStackSize = 1;
+        this.setTranslationKey("boat_" + typeIn.getName());
         this.setRegistryName("boat_" + typeIn.getName());
         this.setCreativeTab(MTabs.tools);
     }

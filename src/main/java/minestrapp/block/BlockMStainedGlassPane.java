@@ -32,6 +32,7 @@ public class BlockMStainedGlassPane extends BlockPane implements IMetaBlockName
     public BlockMStainedGlassPane()
     {
         super(Material.GLASS, false);
+        this.setTranslationKey("m_stained_glass_pane");
 		this.setRegistryName("m_stained_glass_pane");
         this.setDefaultState(this.blockState.getBaseState().withProperty(NORTH, Boolean.valueOf(false)).withProperty(EAST, Boolean.valueOf(false)).withProperty(SOUTH, Boolean.valueOf(false)).withProperty(WEST, Boolean.valueOf(false)).withProperty(COLOR, BlockMGlowDyed.EnumGlowDye.WHITE));
         this.setCreativeTab(MTabs.dye);

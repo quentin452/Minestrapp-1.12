@@ -25,6 +25,7 @@ public class MShovel extends ItemSpade
 	public MShovel(ToolMaterial material, String name)
 	{
 		super(material);
+		this.setTranslationKey(name);
 		this.setRegistryName(name);
 		this.setCreativeTab(MTabs.tools);
 	}

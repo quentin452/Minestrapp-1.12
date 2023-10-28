@@ -58,6 +58,7 @@ public class BlockTerracreep extends BlockBush implements IGrowable
 	{
 		super(Material.VINE);
 		this.setDefaultState(this.blockState.getBaseState().withProperty(UP, Boolean.valueOf(true)).withProperty(DOWN, Boolean.valueOf(true)).withProperty(NORTH, Boolean.valueOf(true)).withProperty(EAST, Boolean.valueOf(true)).withProperty(SOUTH, Boolean.valueOf(true)).withProperty(WEST, Boolean.valueOf(true)));
+		this.setTranslationKey("terracreep");
 		this.setRegistryName("terracreep");
 		this.setHardness(4F);
 		this.setSoundType(SoundType.SLIME);

@@ -44,6 +44,7 @@ public class BlockBerryBush extends BlockBush implements IGrowable
 	
 	public BlockBerryBush(String name, MapColor mapColor, String terrain)
 	{
+        this.setTranslationKey(name);
 		this.setRegistryName(name);
 		this.setDefaultState(this.blockState.getBaseState().withProperty(this.getAgeProperty(), Integer.valueOf(0)));
 		this.setTickRandomly(true);

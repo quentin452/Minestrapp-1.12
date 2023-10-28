@@ -25,6 +25,7 @@ public class BlockMFalling extends BlockFalling
 	public BlockMFalling(String name, Material material, SoundType sound, float hardness, String tool, int harvest)
 	{
 		super(material);
+		this.setTranslationKey(name);
 		this.setRegistryName(name);
 		this.setSoundType(sound);
 		this.setHardness(hardness);

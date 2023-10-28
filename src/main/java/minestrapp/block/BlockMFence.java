@@ -57,6 +57,7 @@ public class BlockMFence extends BlockFence implements IMetaBlockName
     public BlockMFence()
 	{
 		super(Material.WOOD, MapColor.WOOD);
+        this.setTranslationKey("m_fence");
 		this.setRegistryName("m_fence");
 		this.setSoundType(SoundType.WOOD);
 		this.setHardness(2F);
